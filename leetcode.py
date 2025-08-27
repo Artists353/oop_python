@@ -28,27 +28,24 @@ print(s.twoSum(nums, target))
         
 x = 121
 s = Solution()
-s.isPalindrome(x)''' 
-#4 задача на leetcode 
+s.isPalindrome(x)'''
+
+#4 задача на leetcode
 '''class Solution(object):
-    def romanToInt(self, s):
-        values = {
-            "I": 1, "V": 5, "X": 10, "L": 50,
-            "C": 100, "D": 500, "M": 1000,
-            "IV": 4, "IX": 9,
-            "XL": 40, "XC": 90,
-            "CD": 400, "CM": 900
-        }
-        
-        i = 0
-        number = 0
-        while i < len(s):
-            # пробуем взять два символа
-            if i + 1 < len(s) and s[i:i+2] in values:
-                number += values[s[i:i+2]]
-                i += 2
-            else:
-                number += values[s[i]]
-                i += 1
-        return number'''
+    def longestCommonPrefix(self, strs):
+        if not strs:
+            return ""
+        # взять первую строку как базовую
+        prefix = strs[0]
+        for s in strs[1:]:
+            # сокращаем prefix пока он не является префиксом s
+            while not s.startswith(prefix):
+                prefix = prefix[:-1]
+                if not prefix:
+                    return ""
+        return prefix
+
+s = Solution()
+strs = ["flower","flow","flight"]
+print(s.longestCommonPrefix(strs))  # -> "fl" '''
 
